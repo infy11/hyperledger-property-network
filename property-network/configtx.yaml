@@ -14,7 +14,7 @@
 ################################################################################
 Profiles:
 
-    TwoOrgsOrdererGenesis:
+    ThreeOrgsOrdererGenesis:
         Capabilities:
             <<: *ChannelCapabilities
         Orderer:
@@ -28,13 +28,15 @@ Profiles:
                 Organizations:
                     - *Advocate
                     - *Gda
-    TwoOrgsChannel:
+                    - *Builder
+    ThreeOrgsChannel:
         Consortium: SampleConsortium
         Application:
             <<: *ApplicationDefaults
             Organizations:
                 - *Advocate
                 - *Gda
+                - *Builder
             Capabilities:
                 <<: *ApplicationCapabilities
 
@@ -92,8 +94,24 @@ Organizations:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer0.org2.example.com
-              Port: 7051
+            - Host: peer0.gda.example.com
+              Port: 7052
+    - &Builder
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: builder
+
+        # ID to load the MSP definition as
+        ID: builder
+
+        MSPDir: crypto-config/peerOrganizations/builder.example.com/msp
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: peer0.builder.example.com
+              Port: 7053           
 
 ################################################################################
 #
