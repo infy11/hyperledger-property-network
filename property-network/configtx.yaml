@@ -14,7 +14,7 @@
 ################################################################################
 Profiles:
 
-    ThreeOrgsOrdererGenesis:
+    FourOrgsOrdererGenesis:
         Capabilities:
             <<: *ChannelCapabilities
         Orderer:
@@ -29,7 +29,8 @@ Profiles:
                     - *Advocate
                     - *Gda
                     - *Builder
-    ThreeOrgsChannel:
+                    - *Bank
+    FourOrgsChannel:
         Consortium: SampleConsortium
         Application:
             <<: *ApplicationDefaults
@@ -37,6 +38,7 @@ Profiles:
                 - *Advocate
                 - *Gda
                 - *Builder
+                - *Bank
             Capabilities:
                 <<: *ApplicationCapabilities
 
@@ -112,7 +114,23 @@ Organizations:
             # encoded in the genesis block in the Application section context
             - Host: peer0.builder.example.com
               Port: 7053           
+   
+    - &Bank
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: bank
 
+        # ID to load the MSP definition as
+        ID: bank
+
+        MSPDir: crypto-config/peerOrganizations/bank.example.com/msp
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: peer0.bank.example.com
+              Port: 7053
 ################################################################################
 #
 #   SECTION: Orderer

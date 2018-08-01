@@ -10,6 +10,7 @@ volumes:
   peer0.advocate.example.com:
   peer0.gda.example.com:
   peer0.builder.example.com:
+  peer0.bank.example.com:
 
 networks:
   byfn:
@@ -49,6 +50,14 @@ services:
     networks:
       - byfn    
 
+  peer0.bank.example.com:
+    container_name: peer0.bank.example.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.bank.example.com
+    networks:
+      - byfn      
+
 
   cli:
     container_name: cli
@@ -81,5 +90,6 @@ services:
       - peer0.advocate.example.com
       - peer0.gda.example.com
       - peer0.builder.example.com
+      - peer0.bank.example.com
     networks:
       - byfn

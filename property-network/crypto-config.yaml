@@ -45,3 +45,10 @@ PeerOrgs:
     Users:
       Count: 1    
 
+  - Name: bank
+    Domain: bank.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+    Users:
+      Count: 1 
