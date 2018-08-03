@@ -3,9 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 
+
+//creating router objects for express
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var bankRouter=require('./routes/bank');
+var gdaRouter=require('./routes/gda');
+var advocateRouter=require('./routes/advocate');
 
 var app = express();
 
@@ -18,9 +24,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json({ type: 'application/*+json' }))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/bank',bankRouter);
+app.use('/gda',gdaRouter);
+app.use('/advocate',advocateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
