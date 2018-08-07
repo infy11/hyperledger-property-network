@@ -12,7 +12,7 @@ var usersRouter = require('./routes/users');
 var bankRouter=require('./routes/bank');
 var gdaRouter=require('./routes/gda');
 var advocateRouter=require('./routes/advocate');
-
+var builderRouter=require('./routes/builder');
 var app = express();
 
 // view engine setup
@@ -31,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/bank',bankRouter);
 app.use('/gda',gdaRouter);
 app.use('/advocate',advocateRouter);
+app.use('/builder',builderRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
