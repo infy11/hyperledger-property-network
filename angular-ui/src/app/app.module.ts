@@ -3,12 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { UiModule } from './ui/ui.module';
+import { BuilderComponent } from './builder/builder.component';
+import { AgGridModule } from 'ag-grid-angular';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuilderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    UiModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]
