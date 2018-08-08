@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-material.css";
+
+@import "~ag-grid/dist/styles/ag-theme-fresh.css";
+
+
+.card1 {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 20px;
+    margin-top: 20px /* Added */
+  }
