@@ -7,6 +7,12 @@ import { UiModule } from './ui/ui.module';
 import { BuilderComponent } from './builder/builder.component';
 import { AgGridModule } from 'ag-grid-angular';
 
+import { FormsModule } from '@angular/forms';
+import { BuilderService } from "./builder.service";
+import { HttpClientModule } from '@angular/common/http'; 
+
+
+
 
 @NgModule({
   declarations: [
@@ -16,9 +22,11 @@ import { AgGridModule } from 'ag-grid-angular';
   imports: [
     BrowserModule,
     UiModule,
+    FormsModule,
+    HttpClientModule, 
     AgGridModule.withComponents([])
   ],
-  providers: [],
+  providers: [BuilderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
