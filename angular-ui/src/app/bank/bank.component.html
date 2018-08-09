@@ -28,12 +28,6 @@
           <input type="text" class="form-control" required name="BorrowerID" [(ngModel)]="bank.BorrowerID" id="inlineFormCustomSelect">
 
           <br>
-          <label for="Ammount">
-              Ammount
-          </label>
-          <input type="text" class="form-control" required name="CurrentOwner" [(ngModel)]="bank.Ammount" id="inlineFormCustomSelect">
-
-          <br>
           
       
 
@@ -48,7 +42,7 @@
     </div>
     <div class="col-md-8">
 
-      <div class="card border-info mb-3 card1 shadow">
+      <div class="card border-info mb-3 card1 shadow" style="max-width: 47em;">
         <div class="card-body">
           <div  class="card-title">
           <h4>Bank Loan Details</h4>
@@ -60,7 +54,7 @@
      
         
         </div>
-          <ag-grid-angular style="width: 100%; height: 750px;" class="ag-theme-material" [rowData]="rowData" [columnDefs]="columnDefs"
+          <ag-grid-angular style="width: 100%; height: 400px;" class="ag-theme-material" [rowData]="rowData" [columnDefs]="columnDefs"
             [enableSorting]="true" [enableFilter]="true" [pagination]="true" (gridReady)="onGridReady($event)" [paginationPageSize]="8">
           </ag-grid-angular>
         </div>

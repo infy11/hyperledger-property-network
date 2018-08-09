@@ -3,7 +3,7 @@ export class Bank {
         public PropertyID:string,
         public BankID:string,
         public BorrowerID:string,
-        public Ammount:string,
+       
         
     ){};
 }

@@ -16,10 +16,10 @@ export class BankService {
 
   constructor(private http:HttpClient) { }
   addBank(bank:Bank):Observable<Bank>{
-    return this.http.post<Bank>("http://localhost:3000/advocate/advocate/advocate/create/",bank,httpOptions)
+    return this.http.post<Bank>("http://localhost:3000/bank/bank1/bank/create/",bank,httpOptions)
   }
   getBank():Observable<Bank[]>{
-    return this.http.get<Bank[]>("http://localhost:3000/advocate/advocate/advocate/queryall")
+    return this.http.get<Bank[]>("http://localhost:3000/bank/bank1/bank/queryall")
   }
   
 

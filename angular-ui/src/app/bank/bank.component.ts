@@ -10,7 +10,7 @@ import { NgProgress } from 'ngx-progressbar';
 })
 export class BankComponent implements OnInit {
 
-  bank:Bank=new Bank('','','','');
+  bank:Bank=new Bank('','','');
   columnDefs = [
 
 
@@ -18,7 +18,7 @@ export class BankComponent implements OnInit {
     {headerName: 'PropertyID',valueGetter: 'data.Key'},
     {headerName: 'Bank ID', valueGetter: 'data.Record.bankid' },
     {headerName: 'Borrower ID', valueGetter : 'data.Record.borrowerid' },
-    {headerName: 'Ammount', valueGetter : 'data.Record.ammount' },
+    
    
 
 ];
@@ -59,7 +59,7 @@ submit(){
         this.bank.PropertyID='';
         this.bank.BankID='';
         this.bank.BorrowerID='';
-        this.bank.Ammount='';
+       
       
       }
     }
@@ -73,11 +73,11 @@ onGridReady(params) {
 
   constructor(private bankService:BankService,public ngProgress: NgProgress) {
     this.bankService.getBank().subscribe(
-      advocate=>
+      bank=>
       { 
-        console.log(advocate);
+        console.log(bank);
        
-        this.rowData=advocate;
+        this.rowData=bank;
         
       }
   
