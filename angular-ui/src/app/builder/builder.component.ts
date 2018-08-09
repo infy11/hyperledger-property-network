@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Builder} from '../builder'
 import {BuilderService } from '../builder.service';
+import swal from 'sweetalert';
+import { NgProgress } from 'ngx-progressbar';
+
+
 
 @Component({
   selector: 'app-builder',
@@ -19,19 +23,57 @@ export class BuilderComponent implements OnInit {
 ];
 
 rowData = [];
+ gridApi: any;
+refresh(){
+  this.ngProgress.start();
+  this.builderService.getBuilder().subscribe(
+    Builder=>
+    { 
+      this.ngProgress.done();
+
+      console.log(Builder)
+      this.rowData=Builder;
+      
+    }
+
+   );
+  this.gridApi.setRowData(this.rowData);
+
+}
 submit(){
   this.builderService.addBuilder(this.builder).subscribe(
     res=>{
-     console.log(res)
+      console.log(res);
+      if(res)
+      {
+        var params = { force: true , enableCellChangeFlash:true};
+        
+        swal({
+          title: "Success",
+          text: "Record Created Successfully",
+          icon: "success",
+
+        });
+        this.builder.Address='';
+        this.builder.BuilderID=0;
+        this.builder.BuilderName='';
+        this.builder.PropertyID='';
+        this.builder.Status='';
+      }
     }
   )
 }
 
-  constructor(private builderService:BuilderService) {
+onGridReady(params) {
+  this.gridApi = params.api;
+  
+}
+
+  constructor(private builderService:BuilderService,public ngProgress: NgProgress) {
     this.builderService.getBuilder().subscribe(
       Builder=>
       { 
-        console.log(Builder)
+       
         this.rowData=Builder;
         
       }
@@ -42,6 +84,9 @@ submit(){
    
 
   ngOnInit() {
+    
+
+
   }
 
 }
