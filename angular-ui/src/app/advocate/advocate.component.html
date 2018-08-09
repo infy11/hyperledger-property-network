@@ -1,0 +1,97 @@
+<ng-progress [speed]="500" [showSpinner]="true" 
+[color]="'yellow'" [trickleSpeed]="250" [thick]="true"></ng-progress>
+<app-layout brand="Advocate" color="#8BC34A">
+
+  <div class="row">
+    <div class="card border-info mb-3 card1 shadow">
+      <div class="card-body">
+
+        <h4 class="card-title">Add Advocate Contract</h4>
+        <form class="form form-group" (ngSubmit)="submit()">
+
+          <label for="PropertyId">
+            PropertyID
+          </label>
+          <input type="text" class="form-control" required name="PropertyID" [(ngModel)]="advocate.PropertyID" id="inlineFormCustomSelect">
+
+          <br>
+
+          <label for="Advocate ID">
+            Advocate ID
+          </label>
+          <input type="text" class="form-control" required name="AdvocateID" [(ngModel)]="advocate.AdvocateID" id="inlineForadvocateSelect">
+
+          <br>
+          <label for="AdvocateName">
+            AdvocateName
+          </label>
+          <input type="text" class="form-control" required name="AdvocateName" [(ngModel)]="advocate.AdvocateName" id="inlineFormCustomSelect">
+
+          <br>
+          <label for="CurrentOwner">
+            Current Owner
+          </label>
+          <input type="text" class="form-control" required name="CurrentOwner" [(ngModel)]="advocate.CurrentOwner" id="inlineFormCustomSelect">
+
+          <br>
+          <label for="NewOwner">
+            New Owner
+          </label>
+          <input type="text" class="form-control" required name="NewOwner" [(ngModel)]="advocate.NewOwner" id="inlineFormCustomSelect">
+
+          <br>
+          <label for="DocumentHash">
+              Document Hash
+            </label>
+            <input type="text" class="form-control" required name="DocumentHash" [(ngModel)]="advocate.DocumentHash" id="inlineFormCustomSelect">
+  
+            <br>
+            <label for="DocumentUrl">
+               Document Url
+              </label>
+              <input type="text" class="form-control" required name="DocumentUrl" [(ngModel)]="advocate.DocumentUrl" id="inlineFormCustomSelect">
+    
+              <br>
+      
+
+          <br>
+          <input type="submit" class="btn btn-outline-success btn-block">
+
+        </form>
+
+      </div>
+
+
+    </div>
+    <div class="col-md-8">
+
+      <div class="card border-info mb-3 card1 shadow">
+        <div class="card-body">
+          <div  class="card-title">
+          <h4>Advocate Contract Details</h4>
+          <button (click)="refresh()" class="btn btn-outline-primary float-right">
+              <div style="font-size:1em;">
+                      <i class="fa fa-refresh"></i>
+                    </div>
+      </button>  
+     
+        
+        </div>
+          <ag-grid-angular style="width: 100%; height: 750px;" class="ag-theme-material" [rowData]="rowData" [columnDefs]="columnDefs"
+            [enableSorting]="true" [enableFilter]="true" [pagination]="true" (gridReady)="onGridReady($event)" [paginationPageSize]="8">
+          </ag-grid-angular>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+  <br/>
+  <br/>
+  <br/>
+
+</app-layout>
