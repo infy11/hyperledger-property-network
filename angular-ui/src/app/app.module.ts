@@ -11,6 +11,7 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { AdvocateComponent } from './advocate/advocate.component';
 import { BankComponent } from './bank/bank.component';
 import { GdaComponent } from './gda/gda.component';
+import { SharedledgerComponent } from './sharedledger/sharedledger.component';
 
 
 
@@ -22,7 +23,8 @@ import { GdaComponent } from './gda/gda.component';
     BuilderComponent,
     AdvocateComponent,
     BankComponent,
-    GdaComponent
+    GdaComponent,
+    SharedledgerComponent
   ],
   imports: [
     BrowserModule,

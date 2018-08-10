@@ -32,7 +32,7 @@ router.get('/:channelName/:chaincode/query/:key',async function(req,res,next){
     let channel_name=req.params.channelName;
     let chaincode=req.params.chaincode;
     let key_name=req.params.key;
-    console.log("printing channel name"+channel_name)
+ 
    
     
 
