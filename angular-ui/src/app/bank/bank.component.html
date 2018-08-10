@@ -1,3 +1,74 @@
-<p>
-  bank works!
-</p>
+<ng-progress [speed]="500" [showSpinner]="true" 
+[color]="'yellow'" [trickleSpeed]="250" [thick]="true"></ng-progress>
+<app-layout brand="Bank" color="#8BC34A">
+
+  <div class="row">
+    <div class="card border-info mb-3 card1 shadow">
+      <div class="card-body">
+
+        <h4 class="card-title">Add Bank Loan</h4>
+        <form class="form form-group" (ngSubmit)="submit()">
+
+          <label for="PropertyId">
+            PropertyID
+          </label>
+          <input type="text" class="form-control" required name="PropertyID" [(ngModel)]="bank.PropertyID" id="inlineFormCustomSelect">
+
+          <br>
+
+          <label for="BankID">
+            Bank ID
+          </label>
+          <input type="text" class="form-control" required name="BankID" [(ngModel)]="bank.BankID" id="inlineForadvocateSelect">
+
+          <br>
+          <label for="BorrowerID">
+              Borrower ID
+          </label>
+          <input type="text" class="form-control" required name="BorrowerID" [(ngModel)]="bank.BorrowerID" id="inlineFormCustomSelect">
+
+          <br>
+          
+      
+
+          <br>
+          <input type="submit" class="btn btn-outline-success btn-block">
+
+        </form>
+
+      </div>
+
+
+    </div>
+    <div class="col-md-8">
+
+      <div class="card border-info mb-3 card1 shadow" style="max-width: 47em;">
+        <div class="card-body">
+          <div  class="card-title">
+          <h4>Bank Loan Details</h4>
+          <button (click)="refresh()" class="btn btn-outline-primary float-right">
+              <div style="font-size:1em;">
+                      <i class="fa fa-refresh"></i>
+                    </div>
+      </button>  
+     
+        
+        </div>
+          <ag-grid-angular style="width: 100%; height: 400px;" class="ag-theme-material" [rowData]="rowData" [columnDefs]="columnDefs"
+            [enableSorting]="true" [enableFilter]="true" [pagination]="true" (gridReady)="onGridReady($event)" [paginationPageSize]="8">
+          </ag-grid-angular>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+  <br/>
+  <br/>
+  <br/>
+
+</app-layout>

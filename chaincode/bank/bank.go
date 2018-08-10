@@ -22,7 +22,7 @@ type SmartContract struct {
 type Bank struct {
 	BankId     string `json:"bankid"`
 	BorrowerId string `json:"borrowerid"`
-	amount     string `json:"amount"`
+	Amount     string `json:"amount"`
 }
 
 /*
@@ -84,8 +84,8 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Respo
 
 func (s *SmartContract) createBank(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	if len(args) != 7 {
-		return shim.Error("Incorrect number of arguments. Expecting 7")
+	if len(args) != 4 {
+		return shim.Error("Incorrect number of arguments. Expecting 4")
 	}
 
 	var approval = Bank{BankId: args[1], BorrowerId: args[2], amount: args[3]}
