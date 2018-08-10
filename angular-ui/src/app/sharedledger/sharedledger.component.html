@@ -1,0 +1,57 @@
+<ng-progress [speed]="500" [showSpinner]="true" 
+[color]="'yellow'" [trickleSpeed]="250" [thick]="true"></ng-progress>
+<app-layout brand="Shared Ledger" color="#8BC34A">
+<div class="container">
+<br/>   
+  <div class="card border-info mb-3 card1 shadow">
+      <div class="card-body">
+
+<form class="form-inline" (ngSubmit)="getBuilder()">
+  <div class="form-group mb-1">
+
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Password</label>
+    <input type="text" class="form-control" [(ngModel)]="PropertyID" name="PropertyID" id="inputPassword2" placeholder="Enter Property ID">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2 ">Get Details</button>
+</form>
+
+
+
+</div></div>
+
+<h3>Details </h3>
+<div class="row" >
+  <div class="col-md-12">
+      <div class="card border-info mb-3 card1 shadow">
+          <div class="card-body">
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-Builder-tab" data-toggle="pill" href="#pills-Builder" role="tab" aria-controls="pills-Builder" aria-selected="true">Builder</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-Bank-tab" data-toggle="pill" href="#pills-Bank" role="tab" aria-controls="pills-Bank" aria-selected="false">Bank</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-Advocate-tab" data-toggle="pill" href="#pills-Advocate" role="tab" aria-controls="pills-Advocate" aria-selected="false">Advocate</a>
+                  </li>
+                  <li class="nav-item" (click)="getGda()">
+                      <a class="nav-link" id="pills-GDA-tab"  data-toggle="pill" href="#pills-GDA" role="tab" aria-controls="pills-Advocate" aria-selected="false">GDA</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-Builder" role="tabpanel" aria-labelledby="pills-Builder-tab">{{BuilderDetails}}</div>
+                  <div class="tab-pane fade" id="pills-Bank" role="tabpanel" aria-labelledby="pills-Profile-tab">second section</div>
+                  <div class="tab-pane fade" id="pills-Advocate" role="tabpanel" aria-labelledby="pills-Advocate-tab">third section</div>
+                  <div class="tab-pane fade" id="pills-GDA" role="tabpanel" aria-labelledby="pills-GDA-tab">{{GdaDetails}}</div>
+                </div>
+
+
+
+
+  </div>
+
+
+</div>
+</div>

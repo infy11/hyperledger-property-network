@@ -1,11 +1,13 @@
+<ng-progress [speed]="500" [showSpinner]="true" 
+[color]="'yellow'" [trickleSpeed]="250" [thick]="true"></ng-progress>
 <app-layout brand="Builder" color="#8BC34A">
 
   <div class="row">
-    <div class="card border-info mb-3 card1 shadow" style="max-width: 30rem;">
+    <div class="card border-info mb-3 card1 shadow">
       <div class="card-body">
 
         <h4 class="card-title">Add Property</h4>
-        <form class="form form-group" (ngSubmit)="onSubmit()">
+        <form class="form form-group" (ngSubmit)="submit()">
 
           <label for="PropertyId">
             PropertyID
@@ -50,16 +52,20 @@
     </div>
     <div class="col-md-8">
 
-      <div class="card border-info mb-3 card1 shadow" style="max-width: 60rem;">
+      <div class="card border-info mb-3 card1 shadow">
         <div class="card-body">
-          <h4 class="card-title">Property Details</h4>
-          <ag-grid-angular style="width: 100%; height: 550px;" class="ag-theme-material" 
-          [rowData]="rowData" 
-          [columnDefs]="columnDefs" 
-          [enableSorting]="true" 
-          [enableFilter]="true"
-          [pagination]="true"
-          >
+          <div  class="card-title">
+          <h4>Property Details</h4>
+          <button (click)="refresh()" class="btn btn-outline-primary float-right">
+              <div style="font-size:1em;">
+                      <i class="fa fa-refresh"></i>
+                    </div>
+      </button>  
+     
+        
+        </div>
+          <ag-grid-angular style="width: 100%; height: 550px;" class="ag-theme-material" [rowData]="rowData" [columnDefs]="columnDefs"
+            [enableSorting]="true" [enableFilter]="true" [pagination]="true" (gridReady)="onGridReady($event)" [paginationPageSize]="8">
           </ag-grid-angular>
         </div>
       </div>
