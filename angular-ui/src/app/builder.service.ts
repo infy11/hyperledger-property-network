@@ -15,10 +15,10 @@ export class BuilderService {
 
   constructor(private http:HttpClient) { }
   addBuilder(builder:Builder):Observable<Builder>{
-    return this.http.post<Builder>("http://localhost:3000/gda/property/mycc/createproperty",builder,httpOptions)
+    return this.http.post<Builder>("http://localhost:3000/builder/builder/builder/create",builder,httpOptions)
   }
   getBuilder():Observable<Builder[]>{
-    return this.http.get<Builder[]>("http://localhost:3000/gda/property/mycc/queryallproperties")
+    return this.http.get<Builder[]>("http://localhost:3000/builder/builder/builder/queryall")
   }
   
 

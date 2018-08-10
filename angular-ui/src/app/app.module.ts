@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from 'ngx-progressbar';
 import { AdvocateComponent } from './advocate/advocate.component';
 import { BankComponent } from './bank/bank.component';
+import { GdaComponent } from './gda/gda.component';
 
 
 
@@ -20,7 +21,8 @@ import { BankComponent } from './bank/bank.component';
     AppComponent,
     BuilderComponent,
     AdvocateComponent,
-    BankComponent
+    BankComponent,
+    GdaComponent
   ],
   imports: [
     BrowserModule,

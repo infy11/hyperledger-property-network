@@ -1,0 +1,74 @@
+    <ng-progress [speed]="500" [showSpinner]="true" 
+[color]="'yellow'" [trickleSpeed]="250" [thick]="true"></ng-progress>
+<app-layout brand="GDA" color="#8BC34A">
+
+  <div class="row">
+    <div class="card border-info mb-3 card1 shadow">
+      <div class="card-body">
+
+        <h4 class="card-title">Add GDA Status</h4>
+        <form class="form form-group" (ngSubmit)="submit()">
+
+          <label for="PropertyId">
+            PropertyID
+          </label>
+          <input type="text" class="form-control" required name="PropertyID" [(ngModel)]="gda.PropertyID" id="inlineFormCustomSelect">
+
+          <br>
+
+          <label for="currentowner">
+            Current Owner
+          </label>
+          <input type="text" class="form-control" required name="currentowner" [(ngModel)]="gda.CurrentOwner" id="inlineForadvocateSelect">
+
+          <br>
+          <label for="ApprovalStatus">
+              Approval Status
+          </label>
+          <input type="text" class="form-control" required name="ApprovalStatus" [(ngModel)]="gda.ApprovalStatus" id="inlineFormCustomSelect">
+
+          <br>
+          
+      
+
+          <br>
+          <input type="submit" class="btn btn-outline-success btn-block">
+
+        </form>
+
+      </div>
+
+
+    </div>
+    <div class="col-md-8">
+
+      <div class="card border-info mb-3 card1 shadow" style="max-width: 47em;">
+        <div class="card-body">
+          <div  class="card-title">
+          <h4>Gda Approval Details</h4>
+          <button (click)="refresh()" class="btn btn-outline-primary float-right">
+              <div style="font-size:1em;">
+                      <i class="fa fa-refresh"></i>
+                    </div>
+      </button>  
+     
+        
+        </div>
+          <ag-grid-angular style="width: 100%; height: 400px;" class="ag-theme-material" [rowData]="rowData" [columnDefs]="columnDefs"
+            [enableSorting]="true" [enableFilter]="true" [pagination]="true" (gridReady)="onGridReady($event)" [paginationPageSize]="8">
+          </ag-grid-angular>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+  <br/>
+  <br/>
+  <br/>
+
+</app-layout>
