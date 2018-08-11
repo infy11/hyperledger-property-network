@@ -11,6 +11,8 @@ export class SharedledgerComponent implements OnInit {
   BuilderDetails : string ;
   PropertyID: string;
   GdaDetails:string;
+  BankDetails:string;
+  AdvocateDetails:string;
 
   constructor(private sharedLedgerService:SharedledgerService,public ngProgress: NgProgress) { }
 
@@ -53,7 +55,7 @@ export class SharedledgerComponent implements OnInit {
       {  this.ngProgress.start();
         
         this.ngProgress.done();
-        this.BuilderDetails=JSON.stringify(bank);
+        this.BankDetails=JSON.stringify(bank);
         
       }
   
@@ -68,7 +70,7 @@ export class SharedledgerComponent implements OnInit {
       {  this.ngProgress.start();
         
         this.ngProgress.done();
-        this.BuilderDetails=JSON.stringify(advocate);
+        this.AdvocateDetails=JSON.stringify(advocate);
         
       }
   

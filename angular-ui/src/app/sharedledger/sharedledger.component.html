@@ -30,10 +30,10 @@
                   <li class="nav-item">
                     <a class="nav-link active" id="pills-Builder-tab" data-toggle="pill" href="#pills-Builder" role="tab" aria-controls="pills-Builder" aria-selected="true">Builder</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" (click)="getBank()">
                     <a class="nav-link" id="pills-Bank-tab" data-toggle="pill" href="#pills-Bank" role="tab" aria-controls="pills-Bank" aria-selected="false">Bank</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" (click)="getAdvocate()">
                     <a class="nav-link" id="pills-Advocate-tab" data-toggle="pill" href="#pills-Advocate" role="tab" aria-controls="pills-Advocate" aria-selected="false">Advocate</a>
                   </li>
                   <li class="nav-item" (click)="getGda()">
@@ -42,8 +42,8 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                   <div class="tab-pane fade show active" id="pills-Builder" role="tabpanel" aria-labelledby="pills-Builder-tab">{{BuilderDetails}}</div>
-                  <div class="tab-pane fade" id="pills-Bank" role="tabpanel" aria-labelledby="pills-Profile-tab">second section</div>
-                  <div class="tab-pane fade" id="pills-Advocate" role="tabpanel" aria-labelledby="pills-Advocate-tab">third section</div>
+                  <div class="tab-pane fade" id="pills-Bank" role="tabpanel" aria-labelledby="pills-Profile-tab">{{BankDetails}}</div>
+                  <div class="tab-pane fade" id="pills-Advocate" role="tabpanel" aria-labelledby="pills-Advocate-tab">{{AdvocateDetails}}</div>
                   <div class="tab-pane fade" id="pills-GDA" role="tabpanel" aria-labelledby="pills-GDA-tab">{{GdaDetails}}</div>
                 </div>
 
