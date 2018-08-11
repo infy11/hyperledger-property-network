@@ -12,9 +12,20 @@ import { AdvocateComponent } from './advocate/advocate.component';
 import { BankComponent } from './bank/bank.component';
 import { GdaComponent } from './gda/gda.component';
 import { SharedledgerComponent } from './sharedledger/sharedledger.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 
+//Defining routes 
+const appRoutes: Routes = [
+  { path: 'builder', component: BuilderComponent },
+  { path: 'gda', component: GdaComponent },
+  { path: 'bank', component: BankComponent },
+  { path: 'advocate', component: AdvocateComponent },
+  { path: 'shared', component: SharedledgerComponent },
+ 
+ { path: '**', component: SharedledgerComponent }
+];
 
 
 @NgModule({
@@ -32,7 +43,11 @@ import { SharedledgerComponent } from './sharedledger/sharedledger.component';
     FormsModule,
     HttpClientModule, 
     AgGridModule.withComponents([]),
-    NgProgressModule
+    NgProgressModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [BuilderService],
   bootstrap: [AppComponent]

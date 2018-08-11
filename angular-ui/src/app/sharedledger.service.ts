@@ -28,10 +28,10 @@ export class SharedledgerService {
   }
 
   getBankDetails(propertyID:string):Observable<Bank>{
-    return this.http.get<Bank>("http://localhost:3000/shared/bank/bank/querybank/"+propertyID)
+    return this.http.get<Bank>("http://localhost:3000/bank/bank1/bank/query/"+propertyID)
   }
   getAdvocateDetails(propertyID:string):Observable<Advocate>{
-    return this.http.get<Advocate>("http://localhost:3000/shared/advocate/advocate/queryadvocate/"+propertyID)
+    return this.http.get<Advocate>("http://localhost:3000/advocate/advocate/advocate/query/"+propertyID)
   }
 
 }
