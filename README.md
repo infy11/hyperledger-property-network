@@ -225,6 +225,9 @@ so have created a node js script which can be used to convert cryptogen generate
 # Now Let's get our Api server up   
  - Go to Express-api directory and use the followring command 
  - ```sh
+   npm install
+   ```
+ - ```sh
    node start  
     ```
 This will bring our api server up 
@@ -232,6 +235,9 @@ This will bring our api server up
 # Now let's get our Angular ui up
 
 - Go to angular-ui directory
+- ```sh
+  npm install
+  ```
 - ```sh 
   ng serve --open 
   ```
